@@ -1,9 +1,22 @@
 #!/bin/bash
 
 ######################################################
-# This product includes software developed at
-# The Apache Software Foundation (http://www.apache.org/).
-# https://github.com/tyrion9/spring-boot-startup-script
+# Copyright 2019 Pham Ngoc Hoai
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+# http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#    
+# Repo: https://github.com/tyrion9/spring-boot-startup-script
+# 
 ######### PARAM ######################################
 
 JAVA_OPT=-Xmx1024m
@@ -25,14 +38,14 @@ start()
 	if [ $RUNNING -eq 1 ]; then
 		echo "Application already started"
 	else
-        if [ -z "$JARFILE" ]
-        then
-            echo "ERROR: jar file not found"
-        else
-            java  $JAVA_OPT -Djava.security.egd=file:/dev/./urandom -jar $JARFILE &
-            echo $! > $PID_FILE
-            echo "Application $JARFILE starting..."
-        fi
+        	if [ -z "$JARFILE" ]
+        	then
+            		echo "ERROR: jar file not found"
+        	else
+            		java  $JAVA_OPT -Djava.security.egd=file:/dev/./urandom -jar $JARFILE &
+            		echo $! > $PID_FILE
+            		echo "Application $JARFILE starting..."
+        	fi
 	fi
 }
 
