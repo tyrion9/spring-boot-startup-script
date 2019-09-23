@@ -29,7 +29,7 @@ start()
         then
             echo "ERROR: jar file not found"
         else
-            java -Djava.security.egd=file:/dev/./urandom $JAVA_OPT -jar $JARFILE &
+            java  $JAVA_OPT -Djava.security.egd=file:/dev/./urandom -jar $JARFILE &
             echo $! > $PID_FILE
             echo "Application $JARFILE starting..."
         fi
