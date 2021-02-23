@@ -20,7 +20,7 @@
 ######### PARAM ######################################
 
 JAVA_OPT=-Xmx1024m
-JARFILE=`ls -1r *.jar 2>/dev/null | head -n 1`
+JARFILE=`ls -1rv *.jar 2>/dev/null | head -n 1`
 PID_FILE=pid.file
 RUNNING=N
 PWD=`pwd`
